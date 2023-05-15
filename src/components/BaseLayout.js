@@ -31,7 +31,7 @@ export default function BaseLayout() {
    return (
       <Box className={darkMode ? Style.dark : Style.light}>
          <Grid container display={'flex'} flexDirection={'column'} minHeight={'100vh'}
-               justifyContent={'space-between'}>
+               justifyContent={'space-between'} overflow={'hidden'}>
             <Grid item>
                <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode}/>
             </Grid>
