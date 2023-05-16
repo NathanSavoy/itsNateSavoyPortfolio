@@ -9,7 +9,7 @@ import {Route, Routes} from "react-router-dom";
 import {Box, Grid} from "@mui/material";
 
 export default function BaseLayout() {
-   let [darkMode, setDarkMode] = useState(false);
+   let [darkMode, setDarkMode] = useState(true);
 
    function handleToggleDarkMode() {
       let oppositeOfCurrentDarkMode = !darkMode
@@ -35,7 +35,7 @@ export default function BaseLayout() {
             <Grid item>
                <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode}/>
             </Grid>
-            <Grid item flexGrow={1}>
+            <Grid item flexGrow={0}>
                <Routes>
                   <Route exact path={'/'} element={<Home/>}/>
                   <Route exact path={'/blog'} element={<Blog/>}/>
