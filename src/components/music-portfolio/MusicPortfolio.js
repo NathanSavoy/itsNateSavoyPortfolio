@@ -1,31 +1,52 @@
 import React from 'react';
+import { useState, useEffect } from "react";
 import MusicPortfolioBlock from "./MusicPortfolioBlock";
 import Style from './Portfolio.module.scss';
 import Terminal from "./Terminal";
 import { Box, Grid } from "@mui/material";
 import { info } from "../../info/Info";
-import coverPic from "../../img/Maxwells.png"
+import lrgCoverPic from "../../img/Maxwells_lrg.png"
+import smCoverPic from "../../img/Maxwells_sm.png"
 import OverlayedImage from "./OverlayedImage";
 import YoutubeEmbed from "./YoutubeEmbed";
 
 export default function MusicPortfolio() {
     const firstName = info.firstName.toLowerCase()
+    const size = useWindowSize()
 
-    function aboutMeText() {
-        return <>
-            <p><span style={{ color: info.baseColor }}>{firstName}{info.lastName.toLowerCase()} $</span> cat
-                about{firstName} </p>
-            <p><span style={{ color: info.baseColor }}>about{firstName} <span
-                className={Style.green}>(main)</span> $ </span>
-                {info.bio}
-            </p>
-        </>;
+    function useWindowSize() {
+        const [windowSize, setWindowSize] = useState({
+            width: undefined,
+            height: undefined,
+        });
+
+        useEffect(() => {
+            // Handler to call on window resize
+            function handleResize() {
+                // Set window width/height to state
+                setWindowSize({
+                    width: window.innerWidth,
+                    height: window.innerHeight,
+                });
+            }
+
+            // Add event listener
+            window.addEventListener("resize", handleResize);
+
+            // Call handler right away so state gets updated with initial window size
+            handleResize();
+
+            // Remove event listener on cleanup
+            return () => window.removeEventListener("resize", handleResize);
+        }, []); // Empty array ensures that effect is only run on mount
+
+        return windowSize;
     }
 
     return (
-        <Box display={'flex'} flexDirection={'column'} alignItems={'center'} mt={'3rem'}>
+        <Box display={'flex'} flexDirection={'column'} alignItems={'stretch'} justifyContent={'flex-start'} mt={'1.0rem'}>
             <OverlayedImage
-                img={coverPic}
+                img={(size.width > 680) ? lrgCoverPic : smCoverPic}
                 alt={"Nate on stage at Maxwell's"}
                 title={"my music"}
                 body={info.musicBio}
@@ -60,7 +81,7 @@ export default function MusicPortfolio() {
     );
 };
  /* {info.portfolio.map((project, index) => (
-           <Grid item xs={12} md={6} key={index}>
-               <PortfolioBlock image={project.image} live={project.live} source={project.source} title={project.title} />
-           </Grid>
-        ))}*/
+          <Grid item xs={12} md={6} key={index}>
+              <PortfolioBlock image={project.image} live={project.live} source={project.source} title={project.title} />
+          </Grid>
+       ))}*/

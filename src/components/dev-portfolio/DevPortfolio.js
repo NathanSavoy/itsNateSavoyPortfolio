@@ -7,7 +7,7 @@ import coverPic from "../../img/whiteboard.png"
 
 export default function DevPortfolio() {
     return (
-        <Box display={'flex'} flexDirection={'column'} alignItems={'center'} mt={'3rem'}>
+        <Box display={'flex'} flexDirection={'column'} alignItems={'stretch'} justifyContent={'center'} mt={'1.0rem'}>
             <OverlayedImage
                 img={coverPic}
                 alt={"Nate in front of a whiteboard"}

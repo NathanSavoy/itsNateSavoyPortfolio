@@ -41,8 +41,8 @@ export default function Navbar({darkMode, handleClick}) {
     return (
         <Box component={'nav'} width={'100%'}>
             <Box component={'ul'} display={'flex'} justifyContent={'center'} alignItems={'center'}
-                 gap={{xs: '2rem', md: '8rem'}}
-                 textTransform={'lowercase'} fontSize={'1rem'}>
+                 gap={{xs: '1rem', md: '8rem'}} width={'90vw'}
+                 textTransform={'lowercase'} fontSize={{md:'1.5rem', sm:'1.2rem'}} paddingTop={'1.5vh'} paddingBottom={'2.0vh'}>
                 {links.map((link, index) => (
                     <Box key={index} component={'li'} className={(link.active === active && !link.type) && Style.active}
                          sx={{borderImageSource: info.gradient}}>
@@ -52,10 +52,12 @@ export default function Navbar({darkMode, handleClick}) {
                         </Link>
                     </Box>
                 ))}
-                <li>
-                    <Toggler darkMode={darkMode} handleClick={handleClick}/>
-                </li>
             </Box>
         </Box>
     )
 }
+/*
+<li>
+<Toggler darkMode={darkMode} handleClick={handleClick}/>
+</li>
+*/
