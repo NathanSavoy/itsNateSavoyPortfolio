@@ -1,6 +1,7 @@
 import self from "../img/self.png"
 import AudioToys from "../img/AudioToys.png"
 import MidiFootController from "../img/MidiFootController.png"
+import Website from "../img/Website.png"
 
 /* Hi there! Thanks for checking out my portfolio template. Be sure to read the comments to get a better understanding of
 how to make this template work best for you! */
@@ -104,6 +105,15 @@ export const info = {
         },
     ],
     devPortfolio: [ // This is where your portfolio projects will be detailed
+        {
+            title: "ItsNateSavoy.com",
+            img: Website, 
+            source: "https://github.com/NathanSavoy/itsNateSavoyPortfolio", // this should be a link to the **repository** of the project, where the code is hosted.
+            body: ["The new home of Nate on the web! Forked from the lovely template built by Payton Jewell, I made the site my own with custom components for embeded YouTube videos, these project cards, and various other alternations.",<br></br>,<br></br>, 
+                    "The fully-reactive web app is built in React.js, with the source code stored on GitHub and deployed via Heroku.",<br></br>,<br></br>,
+                    "Blog coming soon :D"],
+            alt: "ItsNateSavoy.com screenshot"
+        },
         {
             title: "Music Analysis Application",
             img: AudioToys, 
