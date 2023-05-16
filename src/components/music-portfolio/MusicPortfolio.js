@@ -53,9 +53,9 @@ export default function MusicPortfolio() {
             />
             <Grid container display={'flex'} justifyContent={'center'} gap={'1.5rem'} >
                 {info.musicPortfolio.map((song, index) => (
-                    <Grid item xs={12} md={4} key={index} columns={2} justifyContent={'center'} display={'flex'}>
+                    <Grid item sm={8} lg={4} key={index} columns={2} justifyContent={{sm: 'center', lg:'flex-start'}} display={'flex'}>
                         <div className="App">
-                            <h2>{song.title}</h2>
+                            <h3>{song.title}</h3>
                             <YoutubeEmbed embedId={song.source} />
                         </div>
                     </Grid>
