@@ -12,9 +12,9 @@ const links = [
         active: 'home'
     },
     {
-        name: 'Blog',
-        to: '/blog',
-        active: 'about'
+        name: 'my projects',
+        to: '/devportfolio',
+        active: 'development portfolio'
     },
     {
         name: info.initials,
@@ -28,10 +28,10 @@ const links = [
         active: 'music portfolio'
     },
     {
-        name: 'my projects',
-        to: '/devportfolio',
-        active: 'development portfolio'
-    }
+        name: 'Blog',
+        to: '/blog',
+        active: 'about'
+    },
 ]
 
 export default function Navbar({darkMode, handleClick}) {
@@ -41,8 +41,8 @@ export default function Navbar({darkMode, handleClick}) {
     return (
         <Box component={'nav'} width={'100%'}>
             <Box component={'ul'} display={'flex'} justifyContent={'center'} alignItems={'center'}
-                 gap={{xs: '1rem', md: '8rem'}} width={'90vw'}
-                 textTransform={'lowercase'} fontSize={{md:'1.5rem', sm:'1.2rem'}} paddingTop={'1.5vh'} paddingBottom={'2.0vh'}>
+                 gap={{xs: '1rem', md: '4rem'}} width={'80vw'}
+                 textTransform={'lowercase'} fontSize={{md:'1.5rem', xs:'1.2rem'}} paddingTop={'1.5vh'} paddingBottom={'2.0vh'}>
                 {links.map((link, index) => (
                     <Box key={index} component={'li'} className={(link.active === active && !link.type) && Style.active}
                          sx={{borderImageSource: info.gradient}}>
