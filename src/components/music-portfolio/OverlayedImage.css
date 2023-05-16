@@ -2,9 +2,9 @@
 .image-container {
   position: relative;
   margin-top: 0.5rem;
-  margin-left: 3.0vw;
-  margin-right: 3.0vw;
-  margin-bottom: 3.0rem;
+  margin-left: 5.0vw;
+  margin-right: 5.0vw;
+  margin-bottom: 0.5rem;
   width: 90vw;
   justify-content: center;
 }

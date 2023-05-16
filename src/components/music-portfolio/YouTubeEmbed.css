@@ -3,6 +3,7 @@
     padding: 56.25%;
     position: relative;
     height: 0;
+    justify-content: flex-start;
   }
   
   .video-responsive iframe {
