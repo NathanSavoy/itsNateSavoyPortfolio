@@ -2,7 +2,11 @@
 
 nav {
   transition: $transition;
+  margin-left: 32px;
+  margin-right: 32px;
+  min-width: none;
 }
+
 
 .active {
   border-bottom: 5px solid;

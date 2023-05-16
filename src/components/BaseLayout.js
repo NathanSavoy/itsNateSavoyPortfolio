@@ -2,13 +2,14 @@ import React, {useEffect, useState} from 'react';
 import Style from './BaseLayout.module.scss'
 import Navbar from "./Navbar";
 import Home from "./home/Home";
-import About from "./about/About";
-import Portfolio from "./portfolio/Portfolio";
+import Blog from "./blog/Blog";
+import MusicPortfolio from "./music-portfolio/MusicPortfolio";
+import DevPortfolio from "./dev-portfolio/DevPortfolio";
 import {Route, Routes} from "react-router-dom";
 import {Box, Grid} from "@mui/material";
 
 export default function BaseLayout() {
-   let [darkMode, setDarkMode] = useState(false);
+   let [darkMode, setDarkMode] = useState(true);
 
    function handleToggleDarkMode() {
       let oppositeOfCurrentDarkMode = !darkMode
@@ -30,22 +31,22 @@ export default function BaseLayout() {
    return (
       <Box className={darkMode ? Style.dark : Style.light}>
          <Grid container display={'flex'} flexDirection={'column'} minHeight={'100vh'}
-               justifyContent={'space-between'}>
+               justifyContent={'space-between'} overflow={'hidden'}>
             <Grid item>
                <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode}/>
             </Grid>
-            <Grid item flexGrow={1}>
+            <Grid item flexGrow={0}>
                <Routes>
                   <Route exact path={'/'} element={<Home/>}/>
-                  <Route exact path={'/about'} element={<About/>}/>
-                  <Route exact path={'/portfolio'} element={<Portfolio/>}/>
+                  <Route exact path={'/devportfolio'} element={<DevPortfolio/>}/>
+                  <Route exact path={'/blog'} element={<Blog/>}/>
+                  <Route exact path={'/musicportfolio'} element={<MusicPortfolio/>}/>
                </Routes>
             </Grid>
             <Grid item>
                <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
                     py={'1.5rem'} sx={{opacity: 0.7}} width={'100%'}>
-                  <p>template created with &hearts; by <a href={'https://paytonpierce.dev'}>Payton Pierce</a></p>
-                  <p>&copy; 2023</p>
+                  <p>&copy; 2023 ItsNateSavoy Industries, a MadeUp&#8482; Company</p>
                </Box>
             </Grid>
          </Grid>
