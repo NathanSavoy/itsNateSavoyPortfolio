@@ -42,7 +42,7 @@ export default function Navbar({darkMode, handleClick}) {
         <Box component={'nav'} width={'100%'}>
             <Box component={'ul'} display={'flex'} justifyContent={'center'} alignItems={'center'}
                  gap={{xs: '1rem', md: '6rem'}} width={'80vw'}
-                 textTransform={'lowercase'} fontSize={{md:'1.5rem', xs:'1.2rem'}} paddingTop={'1.5vh'} paddingBottom={'2.0vh'}>
+                 textTransform={'lowercase'} textAlign={'center'} fontSize={{md:'1.5rem', xs:'1.2rem'}} paddingTop={'1.5vh'} paddingBottom={'2.0vh'}>
                 {links.map((link, index) => (
                     <Box key={index} component={'li'} className={(link.active === active && !link.type) && Style.active}
                          sx={{borderImageSource: info.gradient}}>
