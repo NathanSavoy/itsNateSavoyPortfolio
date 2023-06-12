@@ -3,6 +3,7 @@ import Style from './BaseLayout.module.scss'
 import Navbar from "./Navbar";
 import Home from "./home/Home";
 import Blog from "./blog/Blog";
+import BlogPost from "./blog/BlogPost";
 import MusicPortfolio from "./music-portfolio/MusicPortfolio";
 import DevPortfolio from "./dev-portfolio/DevPortfolio";
 import {Route, Routes} from "react-router-dom";
@@ -41,6 +42,8 @@ export default function BaseLayout() {
                   <Route exact path={'/devportfolio'} element={<DevPortfolio/>}/>
                   <Route exact path={'/blog'} element={<Blog/>}/>
                   <Route exact path={'/musicportfolio'} element={<MusicPortfolio/>}/>
+                  <Route exact path={'/blog'} element={<Blog/>}/>
+                     <Route path="/blog/:postSlug" element={<BlogPost/>}/>
                </Routes>
             </Grid>
             <Grid item>

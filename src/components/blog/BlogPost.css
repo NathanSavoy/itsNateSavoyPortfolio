@@ -1,0 +1,103 @@
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 10px 740px 10px 1fr 1fr;
+}
+
+.blog-title {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    padding-top: 2rem;
+    text-align: center;
+    font-family: Courier, monospace, serif;
+    font-weight: 600;
+}
+
+.blog-subtitle {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    text-align: center;
+    font-family: Courier, monospace, serif;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.date {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    text-align: left;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 350;
+    font-size: 1.0rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+
+}
+
+.body {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    text-align: left;
+    font-family: Garamond, Times, serif;
+    font-weight: 550;
+    font-size: 1.25rem;
+    line-height: 1.28;
+}
+
+.blog-image {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    margin-top: 1.0rem;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+@media (max-width: 900px) {
+    article {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem;
+    }
+    
+    .blog-title {
+        position: relative;
+        padding: 0;
+        text-align: center;
+        font-family: Courier, monospace, serif;
+        font-weight: 600;
+    }
+    
+    .blog-subtitle {
+        position: relative;
+        text-align: center;
+        font-family: Courier, monospace, serif;
+        font-style: italic;
+        line-height: 1.5;
+    }
+    
+    .date {
+        position: relative;
+        text-align: left;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 350;
+        font-size: 1.0rem;
+        padding-top: 1.5rem;
+        padding-bottom: 2rem;
+    
+    }
+    
+    .body {
+        position: relative;
+        text-align: left;
+        font-family: Garamond, Times, serif;
+        font-weight: 550;
+        font-size: 1.25rem;
+        line-height: 1.28;
+    }
+    
+    .blog-image {
+        position: relative;
+        margin-top: 1.0rem;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+  }

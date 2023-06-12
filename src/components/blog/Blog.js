@@ -1,66 +1,26 @@
-import React from 'react';
-import './Blog.css';
-import { Box } from "@mui/material";
-import { info } from "../../info/Info";
-import { Posts } from "./Posts";
+import React, { useState } from 'react';
+import BlogCard from "./BlogCard";
+import { Link, useLocation } from "react-router-dom";
+import { Box, Grid } from "@mui/material";
+import { posts } from "./posts/Posts"
 
 export default function Blog() {
-    const firstName = info.firstName.toLowerCase()
+    const location = useLocation()
+    const [active, setActive] = useState(location.pathname === '/' ? 'home' : location.pathname.slice(1, location.pathname.length));
 
-    /*    function aboutMeText() {
-            return <>
-                <p><span style={{ color: info.baseColor }}>{firstName}{info.lastName.toLowerCase()} $</span> cat
-                    about{firstName} </p>
-                <p><span style={{ color: info.baseColor }}>about{firstName} <span
-                    className={Style.green}>(main)</span> $ </span>
-                    {info.bio}
-                </p>
-            </>;
-        }
-    
-        function skillsText() {
-            return <>
-                <p><span style={{ color: info.baseColor }}>{firstName}{info.lastName.toLowerCase()} $</span> cd skills/tools
-                </p>
-                <p><span style={{ color: info.baseColor }}>skills/tools <span
-                    className={Style.green}>(main)</span> $</span> ls</p>
-                <p style={{ color: info.baseColor }}> Proficient With</p>
-                <ul className={Style.skills}>
-                    {info.skills.proficientWith.map((proficiency, index) => <li key={index}>{proficiency}</li>)}
-                </ul>
-                <p style={{ color: info.baseColor }}> Exposed To</p>
-                <ul className={Style.skills}>
-                    {info.skills.exposedTo.map((skill, index) => <li key={index}>{skill}</li>)}
-                </ul>
-            </>;
-        }
-    
-        function miscText() {
-            return <>
-                <p><span style={{ color: info.baseColor }}>{firstName}{info.lastName.toLowerCase()} $</span> cd
-                    hobbies/interests</p>
-                <p><span style={{ color: info.baseColor }}>hobbies/interests <span
-                    className={Style.green}>(main)</span> $</span> ls</p>
-                <ul>
-                    {info.hobbies.map((hobby, index) => (
-                        <li key={index}><Box component={'span'} mr={'1rem'}>{hobby.emoji}</Box>{hobby.label}</li>
-                    ))}
-                </ul>
-            </>;
-        }
-    */
     return (
-        /* <Box display={'flex'} flexDirection={'column'} alignItems={'center'} mt={'3rem'}>
-             <Terminal text={aboutMeText()}/>
-             <Terminal text={skillsText()}/>
-             <Terminal text={miscText()}/>
-             <Posts />
-         </Box>*/
-
-        <Box display={'flex'} flexDirection={'column'} alignItems={'center'} mt={'3rem'}>
-            <h1>This page is<br></br><span style={{ background: info.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Under Construction!</span><span>🚧</span></h1>
-        </Box>
-
-
-    )
-}
+        <Box display={'flex'} flexDirection={'column'} alignItems={'stretch'} justifyContent={'top'} mt={'1.0rem'}>
+            <div justifyContent={'top'}>
+                <Grid container display={'flex'} justifyContent={'center'} alignItems={'start'} gap={'2rem'} position={'relative'}>
+                    {posts.map((post, index) => (
+                        <Grid item key={index} columns={1} justifyContent={'center'} display={'flex'}>
+                            <Link to={{ pathname: `/blog/${post.to}` }}>
+                                <BlogCard title={post.title} subtitle={post.subtitle} date={post.date} media={post.cover} alt={post.alt} />
+                            </Link>
+                        </Grid>
+                    ))}
+                </Grid>
+            </div>
+        </Box >
+    );
+};

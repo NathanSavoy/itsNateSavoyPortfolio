@@ -7,7 +7,8 @@ import {info} from "../info/Info";
 
 const links = [
     {
-        name: 'Home',
+        name: info.initials,
+        type: 'initials',
         to: '/',
         active: 'home'
     },
@@ -17,12 +18,6 @@ const links = [
         active: 'development portfolio'
     },
     {
-        name: info.initials,
-        type: 'initials',
-        to: '/',
-        active: 'home'
-    },
-    {
         name: 'my music',
         to: '/musicportfolio',
         active: 'music portfolio'
@@ -30,7 +25,7 @@ const links = [
     {
         name: 'Blog',
         to: '/blog',
-        active: 'about'
+        active: 'blog'
     },
 ]
 
@@ -40,7 +35,7 @@ export default function Navbar({darkMode, handleClick}) {
 
     return (
         <Box component={'nav'} width={'100%'}>
-            <Box component={'ul'} display={'flex'} justifyContent={'center'} alignItems={'center'}
+            <Box component={'ul'} display={'flex'} justifyContent={'left'} alignItems={'left'}
                  gap={{xs: '1rem', md: '6rem'}} width={'80vw'}
                  textTransform={'lowercase'} textAlign={'center'} fontSize={{md:'1.5rem', xs:'1.2rem'}} paddingTop={'1.5vh'} paddingBottom={'2.0vh'}>
                 {links.map((link, index) => (
