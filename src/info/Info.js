@@ -34,7 +34,7 @@ export const info = {
             text: 'passion for bringing new ideas to life - no matter the domain'
         },
         {
-            emoji: '🎓',
+            emoji: '🎓', 
             text: 'B.S. Honours Mathematical Physics from The Univesity of Waterloo'
         },
         {
