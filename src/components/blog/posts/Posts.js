@@ -21,7 +21,7 @@ export const posts = [
         title: "Writing On The Wind: Starting a Blog in the Age of Short-Form Content",
         to: "WritingOnTheWind",
         subtitle: "One Man’s Mission to Improve His Thinking and Refine His Communication (and Score some Affiliate Links)",
-        date: "June 12, 2023 ",
+        date: "June 2, 2023 ",
         cover: WritingOnTheWindCover,
         body: ["The idea for this blog has been kicking around my mind for quite some time. I have long been interested by the idea of writing as an exercise – as a practice. When I would hear authors and other guru-type figures espouse the value of long-form writing, there were three claims that always stood out. It is said that writing in full sentences – you know, the way we did in school – can hold benefits to one’s written communication (of course), as well as their verbal communication. There are claims that, since our thoughts consist of words, our thinking and decision-making abilities can be improved through writing. ", <br></br>, <br></br>,
 
