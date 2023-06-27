@@ -24,14 +24,14 @@ export const info = {
     firstName: "Nate.",
     lastName: "Savoy",
     initials: "NS", // the example uses first and last, but feel free to use three or more if you like.
-    position: "Musician // Developer",
+    position: "Music // Software // Sales",
     selfPortrait: self, // don't change this unless you want to name your self-portrait in the "img" folder something else!
     gradient: `-webkit-linear-gradient(135deg, ${colors})`, // don't change this either
     baseColor: colors[0],
     miniBio: [ // these are just some "tidbits" about yourself. You can look at mine https://paytonjewell.github.io/#/ for an example if you'd like
         {
             emoji: '🌿',
-            text: 'passion for bringing new ideas to life - no matter the domain'
+            text: 'passion for bringing new ideas to the masses - no matter the domain'
         },
         {
             emoji: '🎓', 
@@ -39,7 +39,7 @@ export const info = {
         },
         {
             emoji: '⚙️',
-            text: 'currently open to work in software development'
+            text: 'currently open to work in technology sales and software development'
         },
         {
             emoji: '🎸',
